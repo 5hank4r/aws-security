@@ -1,0 +1,51 @@
+
+C1 - OVERLY PERMISSIVE IAM RESOURCE CRITICAL
+Review the permissions for the affected resources and follow the principle of least privilege.
+
+C2 - PRIVILEGE ESCALATION TO AWS ADMINISTRATOR CRITICAL
+Review the attack path taken by the assessor and evaluate the relevant access controls at each
+pivot point.
+
+H1 - EC2 USER DATA SENSITIVE INFORMATION LEAKAGE HIGH
+Remove hardcoded secrets and passwords from EC2 User Data.
+
+H2 - CLOUDTRAIL LOGGING DISABLED HIGH
+Create a CloudTrail trail that applies to all regions and includes global service events.
+
+H3 - AWS S3 BUCKET DATA LEAKAGE HIGH
+Restrict bucket permissions to be accessible only by resources that need access to it.
+
+H4 - WEAK IAM PASSWORD POLICY HIGH
+Implement a password policy that ensures strong, high-entropy passwords for all users.
+
+M1 - REDSHIFT CLUSTER DATABASE ENCRYPTION DISABLED MEDIUM
+Enable encryption for all affected databases.
+
+M2 - VPC FLOW LOGS DISABLED MEDIUM
+Enable flow logs on the affected EC2 network interfaces.
+
+M3 - REDSHIFT PARAMETER GROUP SSL NOT REQUIRED MEDIUM
+Require SSL for all connections.
+
+M4 - NO IAM USER ACCESS KEY ROTATION MEDIUM
+Implement a plan to regularly rotate all IAM user access keys.
+
+L1 - ELASTIC BLOCK STORE (EBS) SNAPSHOT ENCRYPTION DISABLED LOW
+Enable encryption for all EBS volumes, so that all future EBS snapshots will also be encrypted.
+15
+888.944.8679 | hackerone.com
+L2 - S3 BUCKET ACCESS LOGGING DISABLED LOW
+Enable access logging for the affected S3 buckets.
+
+L3 - S3 BUCKET VERSIONING DISABLED LOW
+Enable versioning for the affected S3 buckets.
+
+L4 - REDSHIFT USER ACTIVITY LOGGING NOT ENABLED LOW
+Enable user activity logging on all Redshift parameter groups.
+
+L5 - ELASTIC LOAD BALANCER (ELB) ACCESS LOGS DISABLED LOW
+Enable access logging for all load balancers.
+
+I1 - EC2 INSTANCE TERMINATION PROTECTION DISABLED INFORMATIONAL
+Consider enabling EC2 instance termination protection for all affected instances
+
