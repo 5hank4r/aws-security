@@ -49,3 +49,39 @@ Enable access logging for all load balancers.
 I1 - EC2 INSTANCE TERMINATION PROTECTION DISABLED INFORMATIONAL
 Consider enabling EC2 instance termination protection for all affected instances
 
+
+
+Testing 
+
+
+
+Extracting sensitive data from exposed S3buckets
+Injecting malicious code into S3 buckets
+Backdooring S3 buckets for persistentaccess
+
+
+Setting up a vulnerable Lambda function
+
+
+=========================================
+
+Checking for vulnerable S3 Bucket
+aws s3 ls s3://[bucketname]
+A
+
+Sometimes, you got this error so better to use this command.
+
+Command: aws s3 ls s3://[bucketname] --no-sign-request
+
+
+Now there are few commands/operations you can try on it.
+
+Read File: 
+aws s3 ls s3://[bucketname] --no-sign-request
+Move File: 
+aws s3 mv yourfile s3://[bucketname]/test-file.txt --no-sign-request
+
+Copy Files : 
+aws s3 cp yourfile s3://[bucketname]/test-file.svg --no-sign-request
+
+
